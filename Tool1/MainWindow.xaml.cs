@@ -30,7 +30,7 @@ namespace Tool1
             return true;
         }
 
-        public static void GenerateReport(int customerId, string outputFilename)
+        public void GenerateReport(int customerId, string outputFilename)
         {
             //TODO: generate report
         }
