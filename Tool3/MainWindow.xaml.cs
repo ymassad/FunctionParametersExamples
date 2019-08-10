@@ -34,7 +34,7 @@ namespace Tool3
             return true;
         }
 
-        public void GenerateReport(int customerId, string outputFilename, bool includeCustomerComplaints, bool includeOnlyOpenCustomerComplaints)
+        void GenerateReport(int customerId, string outputFilename, bool includeCustomerComplaints, bool includeOnlyOpenCustomerComplaints)
         {
             //TODO: generate report
         }

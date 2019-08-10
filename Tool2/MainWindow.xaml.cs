@@ -32,7 +32,7 @@ namespace Tool2
             return true;
         }
 
-        public void GenerateReport(int customerId, string outputFilename, bool includeCustomerComplaints)
+        void GenerateReport(int customerId, string outputFilename, bool includeCustomerComplaints)
         {
             //TODO: generate report
         }
