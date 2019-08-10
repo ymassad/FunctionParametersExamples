@@ -1,0 +1,48 @@
+﻿<Window x:Class="Tool6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tool6"
+        mc:Ignorable="d"
+        Title="Report Generation Tool" SizeToContent="WidthAndHeight">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Margin="5" Grid.Row="0" Grid.Column="0">Customer Id:</Label>
+        <TextBox Margin="5" Grid.Row="0" Grid.Column="1" Width="100" x:Name="CustomerIdTextBox" HorizontalAlignment="Left"></TextBox>
+
+        <Label Margin="5" Grid.Row="1" Grid.Column="0">Output filename:</Label>
+        <TextBox Margin="5" Grid.Row="1" Grid.Column="1" Width="400" x:Name="OutputFilenameTextBox" HorizontalAlignment="Left"></TextBox>
+
+        <RadioButton Margin="5" Grid.Row="2" Grid.Column="1" x:Name="DoNotIncludeCustomerComplaintsRadioButton" IsChecked="True">Do not include customer complaints</RadioButton>
+
+        <RadioButton Margin="5" Grid.Row="3" Grid.Column="1" x:Name="IncludeCustomerComplaintsRadioButton" >Include customer complaints</RadioButton>
+
+        <CheckBox Margin="20,5,5,5" Grid.Row="4" Grid.Column="1" x:Name="IncludeOnlyOpenComplaintsCheckBox"
+                  IsEnabled="{Binding ElementName=IncludeCustomerComplaintsRadioButton, Path=IsChecked, TargetNullValue=false}"
+                  >Include only open complaints</CheckBox>
+
+        <RadioButton Margin="5" Grid.Row="5" Grid.Column="1" x:Name="IncludeOnlyASummaryOfCustomerComplaintsRadioButton">Include only a summary of customer complaints</RadioButton>
+
+        <CheckBox Margin="20,5,5,5" Grid.Row="6" Grid.Column="1" x:Name="IncludeOnlyOpenComplaintsForSummaryCheckBox"
+                  IsEnabled="{Binding ElementName=IncludeOnlyASummaryOfCustomerComplaintsRadioButton, Path=IsChecked, TargetNullValue=false}"
+        >Include only details related to open complaints</CheckBox>
+
+        <Button Margin="5" Grid.Row="7" Grid.Column="0" Padding="5" x:Name="GenerateReportButton" Click="GenerateReportButton_Click">Generate Report</Button>
+    </Grid>
+</Window>
